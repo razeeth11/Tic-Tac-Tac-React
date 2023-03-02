@@ -1,23 +1,21 @@
-.App{
+body{
+  font-family: roboto;
+  font-weight: 600;
+}
+
+.content-box{
+  height: 120px;
+  width: 120px;
+  border: 1px solid grey;
+  font-size: 100px;
   display: flex;
-  flex-wrap: wrap;
   justify-content: center;
-  gap: 24px;
+  align-items: center;
 }
 
-body {
-  font-family: Roboto;
-  margin: 16px;
-}
-
-.container{
-  width: 300px;
-text-align: center;
-padding: 8px;
-border: 1px solid black;
-border-radius: 10px;
-}
-
-img{
-  width: 200px;
+.App{ 
+  width: min-content;
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  margin: 150px auto;
 }
