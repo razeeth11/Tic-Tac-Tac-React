@@ -1,10 +1,15 @@
 import { useState } from 'react'
 import reactLogo from './assets/react.svg'
+import Confetti from 'react-confetti'
+import Paper from "@mui/material/Paper";
+import Button from '@mui/material/Button';
 import './App.css'
 
 function App() {
 
   const [values,setValues] = useState(Array(9).fill(""))
+  const { width, height } = useState(window.innerWidth,window.innerHeight)
+
   const [XTurn,setXTurn] = useState(true)
 
   const HandClick = (index)=>{
@@ -38,22 +43,51 @@ function App() {
     return null
   }
 
+  const final = winner(values)
+  const stylee = {
+   color: final === "X" ? "red" : "green",
+  }
+  const radius = {
+    borderRadius : "0px",
+    minHeight : "100vh"
+  }
+
   return (
-    <div>
+    <Paper sx={radius} elevation={10}>
+    <div style={radius} className="Tic-container" >
+    { final ? <Confetti
+      width={width}
+      height={height}
+    /> : "" }
+    <h1 className="headd">Tic Tac Toe</h1>
     <div className="App">
-        { values.map((one,index)=> <GameBox box={one} key={index}/>)} 
+        { values.map((one,index)=> <GameBox box={one} key={index} onBoxClick={()=> HandClick(index)}/>)} 
     </div>
+
+    { final ? <p>The Winner is : <span style={stylee}>{final}</span></p> : "" } 
+
+    {final ? <Button className="extra" variant="contained" onClick={
+        ()=> setValues(Array(9).fill(""),
+        setXTurn(true)
+        )
+      }>Play Again</Button> : <Button className="extra" variant="contained" onClick={
+        ()=> setValues(Array(9).fill(""),
+        setXTurn(true)
+        )
+      }>Try Again</Button>}
+    
     </div>
+    </Paper>
   )
 }
 
-function GameBox() {
+function GameBox({box,onBoxClick}) {
   const style = {
-    color : value == "X" ? "green" : "red",
+    color : box == "X" ? "green" : "red",
   }
   return (
     <div style={style} className="content-box" onClick={onBoxClick}>
-        {value}
+        {box}
     </div>
   )
 }
