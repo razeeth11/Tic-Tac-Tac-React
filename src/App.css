@@ -3,19 +3,115 @@ body{
   font-weight: 600;
 }
 
+.Tic-container{
+  text-align: center;
+  font-size: 20px;
+}
+
+.extra{
+  margin-top: 10px !important;
+}
+
 .content-box{
-  height: 120px;
-  width: 120px;
-  border: 1px solid grey;
-  font-size: 100px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 100px;
+    font-weight: 550;
+    border: 1px solid lightblue;
+    width: 100px;
+    height: 100px;
+    cursor: pointer;
 }
 
 .App{ 
+  margin: auto;
   width: min-content;
-  display: grid;
-  grid-template-columns: repeat(3,1fr);
-  margin: 150px auto;
+   display: grid;
+   grid-template-columns: repeat(3,1fr);
+   justify-items:center;
+}
+
+@media screen and (max-width:320px) {
+   
+  .content-box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 450;
+    border: 1px solid black;
+    font-size: 60px;
+    width: 70px;
+    height: 70px;
+    cursor: pointer;
+  }
+  
+  .content-box:hover{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 450;
+    border: 1px solid black;
+    font-size: 60px;
+    background-color: rgb(255, 0, 0);
+    width: 70px;
+    height: 70px;
+    cursor: pointer;
+  }
+  
+  .boxes{
+    margin: auto;
+    width: min-content;
+     display: grid;
+     grid-template-columns: repeat(3,1fr);
+     justify-items:center;
+  }
+   
+  .Tic-container{
+    text-align: center;
+    font-size: 10px;
+  }
+
+}
+
+@media screen and (max-width:320px) {
+   
+  .Box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 450;
+    border: 1px solid black;
+    font-size: 60px;
+    width: 70px;
+    height: 70px;
+    cursor: pointer;
+  }
+  
+  .Box:hover{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 450;
+    border: 1px solid black;
+    font-size: 60px;
+    background-color: rgb(223, 223, 223);
+    width: 70px;
+    height: 70px;
+    cursor: pointer;
+  }
+  
+  .boxes{
+    margin: auto;
+    width: min-content;
+     display: grid;
+     grid-template-columns: repeat(3,1fr);
+     justify-items:center;
+  }
+   
+  .Tic-container{
+    text-align: center;
+    font-size: 10px;
+  }
+
 }
